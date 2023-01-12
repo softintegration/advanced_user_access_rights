@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+ir_ui_menu_access_manager,ir_ui_menu_access_manager,model_ir_ui_menu_access,advanced_user_access_rights.group_advanced_user_access_rights,1,1,1,1
+ir_ui_view_access_manager,ir_ui_view_access_manager,model_ir_ui_view_access,advanced_user_access_rights.group_advanced_user_access_rights,1,1,1,1

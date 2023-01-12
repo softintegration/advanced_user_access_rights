@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data noupdate="0">
+
+
+    <record id="group_advanced_user_access_rights" model="res.groups">
+        <field name="name">Advanced user access rights</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+    </record>
+
+    <record id="base.user_admin" model="res.users">
+        <field name="groups_id" eval="[(4, ref('advanced_user_access_rights.group_advanced_user_access_rights'))]"/>
+    </record>
+
+</data>
+</openerp>
