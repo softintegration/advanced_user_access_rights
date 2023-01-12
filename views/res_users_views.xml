@@ -8,7 +8,7 @@
         <field name="arch" type="xml">
             <xpath expr="//div[@name='button_box']" position="inside">
                 <button class="oe_stat_button" name="action_view_menu_access_rules" type="object"
-                        icon="fa-list">
+                        icon="fa-list" groups="advanced_user_access_rights.group_advanced_user_access_rights">
                     <div class="o_field_widget o_stat_info">
                         <span class="o_stat_value">
                             <field name="menu_access_rules_count"/>
@@ -17,7 +17,7 @@
                     </div>
                 </button>
                 <button class="oe_stat_button" name="action_view_view_access_rules" type="object"
-                        icon="fa-list">
+                        icon="fa-list" groups="advanced_user_access_rights.group_advanced_user_access_rights">
                     <div class="o_field_widget o_stat_info">
                         <span class="o_stat_value">
                             <field name="view_access_rules_count"/>

@@ -52,7 +52,7 @@ class IrUiView(models.Model):
             return
         if node.get('name'):
             field = name_manager.model._fields.get(node.get('name'))
-            if field.type in ('many2one', 'many2many'):
+            if field and field.type in ('many2one', 'many2many'):
                 comodel = self.env[field.comodel_name].sudo(False)
                 # if no access rules has been configured for this model ,nothing will be done
                 if not self.env.user._model_has_access_rules(comodel._name):
