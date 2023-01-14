@@ -10,8 +10,12 @@
                     <header/>
                     <sheet>
                         <group>
+                            <field name="users_required" invisible="1"/>
                             <field name="menu_ids" widget="many2many_tags"/>
-                            <field name="user_ids" widget="many2many_tags"/>
+                            <field name="user_ids" attrs="{'invisible':[('users_required','=',False)],'required':[('users_required','=',True)]}"
+                                   widget="many2many_tags"/>
+                            <field name="group_ids" attrs="{'invisible':[('users_required','=',True)],'required':[('users_required','=',False)]}"
+                                   widget="many2many_tags"/>
                             <field name="visible" widget="boolean_toggle"/>
                         </group>
                     </sheet>
@@ -31,9 +35,14 @@
             <field name="arch" type="xml">
                 <tree string="Menu access rule"  editable="bottom" create="1" edit="1" import="1">
                     <field name="active" invisible="1"/>
+                    <field name="users_required" invisible="1"/>
                     <field name="sequence" widget="handle"/>
                     <field name="menu_ids" widget="many2many_tags" options="{'no_create': True,'no_edit':True}"/>
-                    <field name="user_ids" widget="many2many_tags" readonly="context.get('readonly_users', False)"
+                    <field name="user_ids" attrs="{'invisible':[('users_required','=',False)],'required':[('users_required','=',True)]}"
+                           widget="many2many_tags" readonly="context.get('readonly_users', False)"
+                           force_save="1" options="{'no_create': True,'no_edit':True}"/>
+                    <field name="group_ids" attrs="{'invisible':[('users_required','=',True)],'required':[('users_required','=',False)]}"
+                           widget="many2many_tags" readonly="context.get('readonly_groups', False)"
                            force_save="1" options="{'no_create': True,'no_edit':True}"/>
                     <field name="visible" widget="boolean_toggle"/>
                 </tree>
@@ -47,9 +56,11 @@
                 <search string="Search Menu access rules">
                     <field name="menu_ids"/>
                     <field name="user_ids"/>
+                    <field name="group_ids"/>
                     <separator/>
                     <group expand="0" string="Group By">
                         <filter name="group_by_user" string="User" context="{'group_by':'user_ids'}"/>
+                        <filter name="group_by_group" string="Group" context="{'group_by':'group_ids'}"/>
                     </group>
                 </search>
             </field>

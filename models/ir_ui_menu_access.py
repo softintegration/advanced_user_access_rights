@@ -19,7 +19,9 @@ class IrUiMenuAccess(models.Model):
                               help="Gives the sequence order when displaying a list of access rules")
     active = fields.Boolean(default=True, help='If you uncheck the active field, it will disable the Rule without deleting it.')
     menu_ids = fields.Many2many('ir.ui.menu','ir_ui_menu_access_menus','access_id','menu_id',string='Menu', required=True, index=True, ondelete='cascade')
-    user_ids = fields.Many2many('res.users','ir_ui_menu_access_users','access_id','user_id', string='Users', required=True,ondelete='restrict', index=True,)
+    user_ids = fields.Many2many('res.users','ir_ui_menu_access_users','access_id','user_id', string='Users', required=False,ondelete='restrict', index=True,)
+    group_ids = fields.Many2many('res.groups','ir_ui_menu_access_groups','access_id','group_id', string='Groups', required=False,ondelete='restrict', index=True,)
+    users_required = fields.Boolean(string='Users or groups required',help='If the users is required ,the groups are not')
     visible = fields.Boolean(string='Visible')
 
 

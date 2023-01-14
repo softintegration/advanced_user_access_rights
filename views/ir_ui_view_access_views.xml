@@ -11,13 +11,19 @@
                     <sheet>
                         <group>
                             <group>
+                                <field name="users_required" invisible="1"/>
                                 <field name="model_ids" widget="many2many_tags"/>
                                 <field name="perm_create" widget="boolean_toggle"/>
                                 <field name="perm_print" widget="boolean_toggle"/>
                                 <field name="perm_export" widget="boolean_toggle"/>
                             </group>
                             <group>
-                                <field name="user_ids" widget="many2many_tags"/>
+                                <field name="user_ids" widget="many2many_tags"
+                                       attrs="{'invisible':[('users_required','=',False)],'required':[('users_required','=',True)]}"
+                                       readonly="context.get('readonly_users', False)" force_save="1" options="{'no_create': True,'no_edit':True}"/>
+                                <field name="group_ids" attrs="{'invisible':[('users_required','=',True)],'required':[('users_required','=',False)]}"
+                                       widget="many2many_tags" readonly="context.get('readonly_groups', False)"
+                                       force_save="1" options="{'no_create': True,'no_edit':True}"/>
                                 <field name="perm_write" widget="boolean_toggle"/>
                                 <field name="perm_delete" widget="boolean_toggle"/>
                             </group>
@@ -38,10 +44,15 @@
             <field name="priority" eval="1"/>
             <field name="arch" type="xml">
                 <tree string="View access rule"  editable="bottom" create="1" edit="1" import="1">
+                    <field name="users_required" invisible="1"/>
                     <field name="active" invisible="1"/>
                     <field name="sequence" widget="handle"/>
                     <field name="model_ids" widget="many2many_tags" options="{'no_create': True,'no_edit':True}"/>
-                    <field name="user_ids" widget="many2many_tags" readonly="context.get('readonly_users', False)"
+                    <field name="user_ids" widget="many2many_tags"
+                           attrs="{'invisible':[('users_required','=',False)],'required':[('users_required','=',True)]}"
+                           readonly="context.get('readonly_users', False)" force_save="1" options="{'no_create': True,'no_edit':True}"/>
+                    <field name="group_ids" attrs="{'invisible':[('users_required','=',True)],'required':[('users_required','=',False)]}"
+                           widget="many2many_tags" readonly="context.get('readonly_groups', False)"
                            force_save="1" options="{'no_create': True,'no_edit':True}"/>
                     <field name="perm_write" widget="boolean_toggle"/>
                     <field name="perm_create" widget="boolean_toggle"/>
@@ -59,9 +70,11 @@
                 <search string="Search View access rules">
                     <field name="model_ids"/>
                     <field name="user_ids"/>
+                    <field name="group_ids"/>
                     <separator/>
                     <group expand="0" string="Group By">
                         <filter name="group_by_user" string="User" context="{'group_by':'user_ids'}"/>
+                        <filter name="group_by_group" string="Group" context="{'group_by':'group_ids'}"/>
                     </group>
                 </search>
             </field>

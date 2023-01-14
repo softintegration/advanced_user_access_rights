@@ -16,11 +16,13 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: advanced_user_access_rights
+#: model_terms:ir.ui.view,arch_db:advanced_user_access_rights.view_groups_form_inherited
 #: model_terms:ir.ui.view,arch_db:advanced_user_access_rights.view_users_form_inherited
 msgid "<span class=\"o_stat_text\">Menu access</span>"
 msgstr "<span class=\"o_stat_text\">Accès Menus</span>"
 
 #. module: advanced_user_access_rights
+#: model_terms:ir.ui.view,arch_db:advanced_user_access_rights.view_groups_form_inherited
 #: model_terms:ir.ui.view,arch_db:advanced_user_access_rights.view_users_form_inherited
 msgid "<span class=\"o_stat_text\">View access</span>"
 msgstr "<span class=\"o_stat_text\">Accès Vues</span>"

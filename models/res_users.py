@@ -29,7 +29,9 @@ class Users(models.Model):
             'type': 'ir.actions.act_window',
             'name': _("Menu access rule"),
             'domain': [('id', 'in', self._get_menu_access_rules().ids)],
-            'context':{'default_user_ids':self.ids,'readonly_users':True},
+            'context':{'default_user_ids':self.ids,
+                       'readonly_users':True,
+                       'default_users_required':True},
             'view_mode': 'tree',
         }
 
@@ -39,7 +41,9 @@ class Users(models.Model):
             'type': 'ir.actions.act_window',
             'name': _("View access rule"),
             'domain': [('id', 'in', self._get_view_access_rules().ids)],
-            'context':{'default_user_ids':self.ids,'readonly_users':True},
+            'context':{'default_user_ids':self.ids,
+                       'readonly_users':True,
+                       'default_users_required':True},
             'view_mode': 'tree',
         }
 
@@ -69,7 +73,7 @@ class Users(models.Model):
         return menu_access_rules
 
     def _get_menu_access_rules_domain(self):
-        domain = [('user_ids', 'in', self.id)]
+        domain = ['|',('user_ids', 'in', self.id),('group_ids','in',self.groups_id.ids)]
         return domain
 
     def _get_view_access_rules(self,model_id=False):
@@ -80,7 +84,7 @@ class Users(models.Model):
         return view_access_rules
 
     def _get_view_access_rules_domain(self):
-        domain = [('user_ids', 'in', self.id)]
+        domain = ['|',('user_ids', 'in', self.id),('group_ids','in',self.groups_id.ids)]
         return domain
 
     def _model_has_access_rules(self,model):
@@ -95,3 +99,66 @@ class Users(models.Model):
                 return True
         return False
 
+
+class Groups(models.Model):
+    _inherit = "res.groups"
+
+    menu_access_rules_count = fields.Integer("Count of configured access menus",
+                                             compute='_compute_menu_access_rules_count')
+    view_access_rules_count = fields.Integer("Count of configured access views",
+                                             compute='_compute_view_access_rules_count')
+
+    def _compute_menu_access_rules_count(self):
+        for each in self:
+            each.menu_access_rules_count = len(each._get_menu_access_rules())
+
+    def _compute_view_access_rules_count(self):
+        for each in self:
+            each.view_access_rules_count = len(each._get_view_access_rules())
+
+
+    def _get_menu_access_rules(self):
+        domain = self._get_menu_access_rules_domain()
+        menu_access_rules = self.env['ir.ui.menu.access'].search(domain)
+        return menu_access_rules
+
+    def _get_menu_access_rules_domain(self):
+        domain = [('group_ids', 'in', self.id)]
+        return domain
+
+
+    def action_view_menu_access_rules(self):
+        return {
+            'res_model': 'ir.ui.menu.access',
+            'type': 'ir.actions.act_window',
+            'name': _("Menu access rule"),
+            'domain': [('id', 'in', self._get_menu_access_rules().ids)],
+            'context':{'default_group_ids':self.ids,
+                       'readonly_groups':True,
+                       'default_users_required':False},
+            'view_mode': 'tree',
+        }
+
+
+    def _get_view_access_rules(self,model_id=False):
+        domain = self._get_view_access_rules_domain()
+        if model_id:
+            domain.append(('model_ids','in',model_id))
+        view_access_rules = self.env['ir.ui.view.access'].search(domain)
+        return view_access_rules
+
+    def _get_view_access_rules_domain(self):
+        domain = [('group_ids', 'in', self.id)]
+        return domain
+
+    def action_view_view_access_rules(self):
+        return {
+            'res_model': 'ir.ui.view.access',
+            'type': 'ir.actions.act_window',
+            'name': _("View access rule"),
+            'domain': [('id', 'in', self._get_view_access_rules().ids)],
+            'context':{'default_group_ids':self.ids,
+                       'readonly_groups':True,
+                       'default_users_required':False},
+            'view_mode': 'tree',
+        }
