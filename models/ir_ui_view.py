@@ -2,7 +2,7 @@
 
 
 from lxml import etree
-from odoo import models, SUPERUSER_ID
+from odoo import models, SUPERUSER_ID, api
 from odoo.addons.base.models.ir_ui_view import transfer_field_to_modifiers
 import logging
 
@@ -41,8 +41,8 @@ class IrUiView(models.Model):
         # if no access rules has been configured for this model ,nothing will be done
         if not self.env.user._model_has_access_rules(name_manager.model._name):
             return
-        if node.tag in ('header', 'button'):
-            if not self.env.user._has_permission(name_manager.model._name, 'write'):
+        if node.tag in ('button',):
+            if not self.env.user._has_permission(name_manager.model._name, 'write') and not self._is_smart_button(node):
                 node.set('invisible', "1")
 
     def _postprocess_tag_field(self, node, name_manager, node_info):
@@ -68,6 +68,8 @@ class IrUiView(models.Model):
             if not self.env.user._model_has_access_rules(name_manager.model._name):
                 return
             if not self.env.user._has_permission(name_manager.model._name, 'write'):
-                node_info['modifiers'].update({'readonly':True})
+                node_info['modifiers'].update({'readonly': True})
 
-
+    @api.model
+    def _is_smart_button(self, node):
+        return node.get('class', False) == 'oe_stat_button'
