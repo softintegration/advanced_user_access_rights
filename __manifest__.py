@@ -2,12 +2,12 @@
 
 {
     'name': 'Advanced user access rights',
-    'version': '1.0.2.1',
+    'version': '1.0.2.2',
     'author':'Soft-integration',
     'category': 'Security/Access rights',
     'description': "",
     'depends': [
-        'portal'
+        'portal',"web"
     ],
     'data': [
         'security/advanced_user_access_rights_security.xml',
@@ -16,6 +16,11 @@
         'views/ir_ui_view_access_views.xml',
         'views/res_users_views.xml',
     ],
+    'assets': {
+        'web.assets_backend': [
+            'advanced_user_access_rights/static/src/models/*/*.js',
+        ],
+    },
     'installable': True,
     'application': False,
     'auto_install': False,
