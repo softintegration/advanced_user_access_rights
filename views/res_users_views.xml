@@ -25,6 +25,15 @@
                         <span class="o_stat_text">View access</span>
                     </div>
                 </button>
+                <button class="oe_stat_button" name="action_view_method_access_rules" type="object"
+                        icon="fa-list" groups="advanced_user_access_rights.group_advanced_user_access_rights">
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_value">
+                            <field name="method_access_rules_count"/>
+                        </span>
+                        <span class="o_stat_text">Operation access</span>
+                    </div>
+                </button>
             </xpath>
         </field>
     </record>

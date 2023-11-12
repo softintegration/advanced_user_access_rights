@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="group_advanced_portal" model="res.groups">
+            <field name="name">Advanced portal</field>
+            <field name="category_id" ref="base.module_category_user_type"/>
+        </record>
+
+    </data>
+</odoo>

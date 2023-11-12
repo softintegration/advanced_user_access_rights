@@ -29,3 +29,4 @@ class IrActions(models.Model):
             if res.get('report',False):
                 res['report'] = []
         return res
+

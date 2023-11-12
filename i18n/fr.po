@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-12 13:39+0000\n"
-"PO-Revision-Date: 2023-01-12 13:39+0000\n"
+"POT-Creation-Date: 2023-11-12 10:39+0000\n"
+"PO-Revision-Date: 2023-11-12 10:39+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -22,12 +22,23 @@ msgid "<span class=\"o_stat_text\">Menu access</span>"
 msgstr "<span class=\"o_stat_text\">Accès Menus</span>"
 
 #. module: advanced_user_access_rights
+#: model_terms:ir.ui.view,arch_db:advanced_user_access_rights.view_users_form_inherited
+msgid "<span class=\"o_stat_text\">Operation access</span>"
+msgstr "<span class=\"o_stat_text\">Accès Opérations</span>"
+
+#. module: advanced_user_access_rights
 #: model_terms:ir.ui.view,arch_db:advanced_user_access_rights.view_groups_form_inherited
 #: model_terms:ir.ui.view,arch_db:advanced_user_access_rights.view_users_form_inherited
 msgid "<span class=\"o_stat_text\">View access</span>"
 msgstr "<span class=\"o_stat_text\">Accès Vues</span>"
 
 #. module: advanced_user_access_rights
+#: model:ir.model,name:advanced_user_access_rights.model_res_groups
+msgid "Access Groups"
+msgstr "Groupes d'accès"
+
+#. module: advanced_user_access_rights
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method_access__message_needaction
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_menu_access__message_needaction
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__message_needaction
 msgid "Action Needed"
@@ -39,33 +50,43 @@ msgid "Actions"
 msgstr ""
 
 #. module: advanced_user_access_rights
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method_access__active
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_menu_access__active
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__active
 msgid "Active"
 msgstr ""
 
 #. module: advanced_user_access_rights
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method_access__activity_ids
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_menu_access__activity_ids
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__activity_ids
 msgid "Activities"
 msgstr ""
 
 #. module: advanced_user_access_rights
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method_access__activity_exception_decoration
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_menu_access__activity_exception_decoration
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__activity_exception_decoration
 msgid "Activity Exception Decoration"
 msgstr ""
 
 #. module: advanced_user_access_rights
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method_access__activity_state
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_menu_access__activity_state
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__activity_state
 msgid "Activity State"
 msgstr ""
 
 #. module: advanced_user_access_rights
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method_access__activity_type_icon
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_menu_access__activity_type_icon
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__activity_type_icon
 msgid "Activity Type Icon"
+msgstr ""
+
+#. module: advanced_user_access_rights
+#: model:res.groups,name:advanced_user_access_rights.group_advanced_portal
+msgid "Advanced portal"
 msgstr ""
 
 #. module: advanced_user_access_rights
@@ -74,17 +95,25 @@ msgid "Advanced user access rights"
 msgstr "Droits d'accès avancés"
 
 #. module: advanced_user_access_rights
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method_access__message_attachment_count
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_menu_access__message_attachment_count
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__message_attachment_count
 msgid "Attachment Count"
 msgstr ""
 
 #. module: advanced_user_access_rights
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_res_groups__menu_access_rules_count
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_res_users__menu_access_rules_count
 msgid "Count of configured access menus"
 msgstr ""
 
 #. module: advanced_user_access_rights
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_res_users__method_access_rules_count
+msgid "Count of configured access methods"
+msgstr ""
+
+#. module: advanced_user_access_rights
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_res_groups__view_access_rules_count
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_res_users__view_access_rules_count
 msgid "Count of configured access views"
 msgstr ""
@@ -100,9 +129,9 @@ msgid "Create menu access rule"
 msgstr "Créer une règle d'accès au menu"
 
 #. module: advanced_user_access_rights
-#: model:ir.model,name:advanced_user_access_rights.model_create_model_config
-msgid "Create model config"
-msgstr ""
+#: model_terms:ir.ui.view,arch_db:advanced_user_access_rights.ir_model_method_access_form_view
+msgid "Create operation access rule"
+msgstr "Créer une règle d'accès à une/plusieurs opération(s)"
 
 #. module: advanced_user_access_rights
 #: model_terms:ir.ui.view,arch_db:advanced_user_access_rights.ir_ui_view_access_form_view
@@ -110,23 +139,20 @@ msgid "Create view access rule"
 msgstr "Créer une règle d'accès au vue"
 
 #. module: advanced_user_access_rights
-#: model:ir.model.fields,field_description:advanced_user_access_rights.field_create_model_config__create_uid
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method__create_uid
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method_access__create_uid
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_menu_access__create_uid
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__create_uid
 msgid "Created by"
 msgstr "Créé par"
 
 #. module: advanced_user_access_rights
-#: model:ir.model.fields,field_description:advanced_user_access_rights.field_create_model_config__create_date
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method__create_date
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method_access__create_date
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_menu_access__create_date
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__create_date
 msgid "Created on"
 msgstr "Créé à"
-
-#. module: advanced_user_access_rights
-#: model:ir.model.fields,field_description:advanced_user_access_rights.field_create_model_config__creation_config_id
-msgid "Creation Config"
-msgstr ""
 
 #. module: advanced_user_access_rights
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__perm_delete
@@ -134,7 +160,8 @@ msgid "Delete"
 msgstr "Supprimer"
 
 #. module: advanced_user_access_rights
-#: model:ir.model.fields,field_description:advanced_user_access_rights.field_create_model_config__display_name
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method__display_name
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method_access__display_name
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_menu_access__display_name
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__display_name
 msgid "Display Name"
@@ -146,66 +173,97 @@ msgid "Export"
 msgstr "Exporter"
 
 #. module: advanced_user_access_rights
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method_access__message_follower_ids
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_menu_access__message_follower_ids
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__message_follower_ids
 msgid "Followers"
 msgstr "Abonnés"
 
 #. module: advanced_user_access_rights
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method_access__message_partner_ids
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_menu_access__message_partner_ids
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__message_partner_ids
 msgid "Followers (Partners)"
 msgstr "Abonnés (Partenaires)"
 
 #. module: advanced_user_access_rights
+#: model:ir.model.fields,help:advanced_user_access_rights.field_ir_model_method_access__activity_type_icon
 #: model:ir.model.fields,help:advanced_user_access_rights.field_ir_ui_menu_access__activity_type_icon
 #: model:ir.model.fields,help:advanced_user_access_rights.field_ir_ui_view_access__activity_type_icon
 msgid "Font awesome icon e.g. fa-tasks"
 msgstr ""
 
 #. module: advanced_user_access_rights
+#: model:ir.model.fields,help:advanced_user_access_rights.field_ir_model_method_access__sequence
 #: model:ir.model.fields,help:advanced_user_access_rights.field_ir_ui_menu_access__sequence
 #: model:ir.model.fields,help:advanced_user_access_rights.field_ir_ui_view_access__sequence
 msgid "Gives the sequence order when displaying a list of access rules"
-msgstr "Donne l'ordre de séquence lors de l'affichage d'une liste de règles d'accès"
+msgstr ""
+"Donne l'ordre de séquence lors de l'affichage d'une liste de règles d'accès"
 
 #. module: advanced_user_access_rights
+#: model_terms:ir.ui.view,arch_db:advanced_user_access_rights.ir_model_method_access_search_view
+#: model_terms:ir.ui.view,arch_db:advanced_user_access_rights.ir_ui_menu_access_search_view
+#: model_terms:ir.ui.view,arch_db:advanced_user_access_rights.ir_ui_view_access_search_view
+msgid "Group"
+msgstr ""
+
+#. module: advanced_user_access_rights
+#: model_terms:ir.ui.view,arch_db:advanced_user_access_rights.ir_model_method_access_search_view
 #: model_terms:ir.ui.view,arch_db:advanced_user_access_rights.ir_ui_menu_access_search_view
 #: model_terms:ir.ui.view,arch_db:advanced_user_access_rights.ir_ui_view_access_search_view
 msgid "Group By"
 msgstr "Regroupé par"
 
 #. module: advanced_user_access_rights
-#: model:ir.model.fields,field_description:advanced_user_access_rights.field_create_model_config__group_ids
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method_access__group_ids
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_menu_access__group_ids
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__group_ids
 msgid "Groups"
 msgstr "Groupes"
 
 #. module: advanced_user_access_rights
+#: model:ir.model,name:advanced_user_access_rights.model_ir_http
+msgid "HTTP Routing"
+msgstr "Routage HTTP"
+
+#. module: advanced_user_access_rights
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method_access__has_message
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_menu_access__has_message
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__has_message
 msgid "Has Message"
 msgstr ""
 
 #. module: advanced_user_access_rights
-#: model:ir.model.fields,field_description:advanced_user_access_rights.field_create_model_config__id
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method_access__can_do
+msgid "Has access"
+msgstr ""
+
+#. module: advanced_user_access_rights
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method__id
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method_access__id
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_menu_access__id
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__id
 msgid "ID"
 msgstr ""
 
 #. module: advanced_user_access_rights
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method_access__activity_exception_icon
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_menu_access__activity_exception_icon
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__activity_exception_icon
 msgid "Icon"
 msgstr ""
 
 #. module: advanced_user_access_rights
+#: model:ir.model.fields,help:advanced_user_access_rights.field_ir_model_method_access__activity_exception_icon
 #: model:ir.model.fields,help:advanced_user_access_rights.field_ir_ui_menu_access__activity_exception_icon
 #: model:ir.model.fields,help:advanced_user_access_rights.field_ir_ui_view_access__activity_exception_icon
 msgid "Icon to indicate an exception activity."
 msgstr ""
 
 #. module: advanced_user_access_rights
+#: model:ir.model.fields,help:advanced_user_access_rights.field_ir_model_method_access__message_needaction
+#: model:ir.model.fields,help:advanced_user_access_rights.field_ir_model_method_access__message_unread
 #: model:ir.model.fields,help:advanced_user_access_rights.field_ir_ui_menu_access__message_needaction
 #: model:ir.model.fields,help:advanced_user_access_rights.field_ir_ui_menu_access__message_unread
 #: model:ir.model.fields,help:advanced_user_access_rights.field_ir_ui_view_access__message_needaction
@@ -214,6 +272,8 @@ msgid "If checked, new messages require your attention."
 msgstr ""
 
 #. module: advanced_user_access_rights
+#: model:ir.model.fields,help:advanced_user_access_rights.field_ir_model_method_access__message_has_error
+#: model:ir.model.fields,help:advanced_user_access_rights.field_ir_model_method_access__message_has_sms_error
 #: model:ir.model.fields,help:advanced_user_access_rights.field_ir_ui_menu_access__message_has_error
 #: model:ir.model.fields,help:advanced_user_access_rights.field_ir_ui_menu_access__message_has_sms_error
 #: model:ir.model.fields,help:advanced_user_access_rights.field_ir_ui_view_access__message_has_error
@@ -222,6 +282,14 @@ msgid "If checked, some messages have a delivery error."
 msgstr ""
 
 #. module: advanced_user_access_rights
+#: model:ir.model.fields,help:advanced_user_access_rights.field_ir_model_method_access__users_required
+#: model:ir.model.fields,help:advanced_user_access_rights.field_ir_ui_menu_access__users_required
+#: model:ir.model.fields,help:advanced_user_access_rights.field_ir_ui_view_access__users_required
+msgid "If the users is required ,the groups are not"
+msgstr ""
+
+#. module: advanced_user_access_rights
+#: model:ir.model.fields,help:advanced_user_access_rights.field_ir_model_method_access__active
 #: model:ir.model.fields,help:advanced_user_access_rights.field_ir_ui_menu_access__active
 #: model:ir.model.fields,help:advanced_user_access_rights.field_ir_ui_view_access__active
 msgid ""
@@ -230,33 +298,38 @@ msgid ""
 msgstr ""
 
 #. module: advanced_user_access_rights
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method_access__message_is_follower
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_menu_access__message_is_follower
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__message_is_follower
 msgid "Is Follower"
 msgstr ""
 
 #. module: advanced_user_access_rights
-#: model:ir.model.fields,field_description:advanced_user_access_rights.field_create_model_config____last_update
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method____last_update
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method_access____last_update
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_menu_access____last_update
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access____last_update
 msgid "Last Modified on"
 msgstr ""
 
 #. module: advanced_user_access_rights
-#: model:ir.model.fields,field_description:advanced_user_access_rights.field_create_model_config__write_uid
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method__write_uid
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method_access__write_uid
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_menu_access__write_uid
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__write_uid
 msgid "Last Updated by"
 msgstr ""
 
 #. module: advanced_user_access_rights
-#: model:ir.model.fields,field_description:advanced_user_access_rights.field_create_model_config__write_date
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method__write_date
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method_access__write_date
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_menu_access__write_date
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__write_date
 msgid "Last Updated on"
 msgstr ""
 
 #. module: advanced_user_access_rights
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method_access__message_main_attachment_id
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_menu_access__message_main_attachment_id
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__message_main_attachment_id
 msgid "Main Attachment"
@@ -266,7 +339,7 @@ msgstr ""
 #: model:ir.model,name:advanced_user_access_rights.model_ir_ui_menu
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_menu_access__menu_ids
 msgid "Menu"
-msgstr "Menu"
+msgstr ""
 
 #. module: advanced_user_access_rights
 #: model:ir.model,name:advanced_user_access_rights.model_ir_ui_menu_access
@@ -275,6 +348,7 @@ msgstr "Accès Menus"
 
 #. module: advanced_user_access_rights
 #: code:addons/advanced_user_access_rights/models/res_users.py:0
+#: code:addons/advanced_user_access_rights/models/res_users.py:0
 #: model:ir.actions.act_window,name:advanced_user_access_rights.ir_ui_menu_access_action
 #: model_terms:ir.ui.view,arch_db:advanced_user_access_rights.ir_ui_menu_access_tree_view
 #, python-format
@@ -282,94 +356,145 @@ msgid "Menu access rule"
 msgstr "Règle d'accès au menu"
 
 #. module: advanced_user_access_rights
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method_access__message_has_error
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_menu_access__message_has_error
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__message_has_error
 msgid "Message Delivery error"
 msgstr ""
 
 #. module: advanced_user_access_rights
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method_access__message_ids
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_menu_access__message_ids
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__message_ids
 msgid "Messages"
 msgstr ""
 
 #. module: advanced_user_access_rights
-#: model:ir.model.fields,field_description:advanced_user_access_rights.field_create_model_config__model_ids
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method__method
+msgid "Method"
+msgstr "Opération"
+
+#. module: advanced_user_access_rights
+#: model:ir.model,name:advanced_user_access_rights.model_ir_model_method_access
+msgid "Method access"
+msgstr "Accès Opération"
+
+#. module: advanced_user_access_rights
+#: model:ir.actions.act_window,name:advanced_user_access_rights.ir_model_method_access_action
+#: model_terms:ir.ui.view,arch_db:advanced_user_access_rights.ir_model_method_access_tree_view
+msgid "Method access rule"
+msgstr "Régle d'accès d'opération"
+
+#. module: advanced_user_access_rights
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method__model_id
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method__model_name
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method_access__model_id
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method_access__model_name
+msgid "Model"
+msgstr "Modèle"
+
+#. module: advanced_user_access_rights
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__model_ids
 msgid "Models"
 msgstr "Modèles"
 
 #. module: advanced_user_access_rights
-#: code:addons/advanced_user_access_rights/wizard/create_model_config.py:0
-#, python-format
-msgid "Models must be specified!"
-msgstr "Les modèles doivent être spécifiés!"
+#: model:ir.model,name:advanced_user_access_rights.model_ir_module_module
+msgid "Module"
+msgstr ""
 
 #. module: advanced_user_access_rights
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method_access__my_activity_date_deadline
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_menu_access__my_activity_date_deadline
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__my_activity_date_deadline
 msgid "My Activity Deadline"
 msgstr ""
 
 #. module: advanced_user_access_rights
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method_access__activity_calendar_event_id
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_menu_access__activity_calendar_event_id
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__activity_calendar_event_id
 msgid "Next Activity Calendar Event"
 msgstr ""
 
 #. module: advanced_user_access_rights
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method_access__activity_date_deadline
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_menu_access__activity_date_deadline
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__activity_date_deadline
 msgid "Next Activity Deadline"
 msgstr ""
 
 #. module: advanced_user_access_rights
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method_access__activity_summary
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_menu_access__activity_summary
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__activity_summary
 msgid "Next Activity Summary"
 msgstr ""
 
 #. module: advanced_user_access_rights
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method_access__activity_type_id
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_menu_access__activity_type_id
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__activity_type_id
 msgid "Next Activity Type"
 msgstr ""
 
 #. module: advanced_user_access_rights
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method_access__message_needaction_counter
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_menu_access__message_needaction_counter
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__message_needaction_counter
 msgid "Number of Actions"
 msgstr ""
 
 #. module: advanced_user_access_rights
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method_access__message_has_error_counter
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_menu_access__message_has_error_counter
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__message_has_error_counter
 msgid "Number of errors"
 msgstr ""
 
 #. module: advanced_user_access_rights
+#: model:ir.model.fields,help:advanced_user_access_rights.field_ir_model_method_access__message_needaction_counter
 #: model:ir.model.fields,help:advanced_user_access_rights.field_ir_ui_menu_access__message_needaction_counter
 #: model:ir.model.fields,help:advanced_user_access_rights.field_ir_ui_view_access__message_needaction_counter
 msgid "Number of messages which requires an action"
 msgstr ""
 
 #. module: advanced_user_access_rights
+#: model:ir.model.fields,help:advanced_user_access_rights.field_ir_model_method_access__message_has_error_counter
 #: model:ir.model.fields,help:advanced_user_access_rights.field_ir_ui_menu_access__message_has_error_counter
 #: model:ir.model.fields,help:advanced_user_access_rights.field_ir_ui_view_access__message_has_error_counter
 msgid "Number of messages with delivery error"
 msgstr ""
 
 #. module: advanced_user_access_rights
+#: model:ir.model.fields,help:advanced_user_access_rights.field_ir_model_method_access__message_unread_counter
 #: model:ir.model.fields,help:advanced_user_access_rights.field_ir_ui_menu_access__message_unread_counter
 #: model:ir.model.fields,help:advanced_user_access_rights.field_ir_ui_view_access__message_unread_counter
 msgid "Number of unread messages"
 msgstr ""
 
 #. module: advanced_user_access_rights
+#: code:addons/advanced_user_access_rights/models/ir_model_method_access.py:0
+#: model:ir.model.constraint,message:advanced_user_access_rights.constraint_ir_model_method_access_model_id_uniq
+#, python-format
+msgid "Only one Rule by Model is permitted by user!"
+msgstr ""
+
+#. module: advanced_user_access_rights
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method_access__method_ids
+msgid "Operation"
+msgstr "Opération"
+
+#. module: advanced_user_access_rights
+#: code:addons/advanced_user_access_rights/models/res_users.py:0
+#, python-format
+msgid "Operations access rule"
+msgstr "Régle d'accès d'opération"
+
+#. module: advanced_user_access_rights
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__perm_print
 msgid "Print"
 msgstr "Imprimer"
-
 
 #. module: advanced_user_access_rights
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__perm_read
@@ -377,12 +502,19 @@ msgid "Read"
 msgstr "Lire"
 
 #. module: advanced_user_access_rights
+#: model_terms:ir.ui.view,arch_db:advanced_user_access_rights.ir_model_method_access_tree_view
+msgid "Refresh methods"
+msgstr "Rafraîchir les opérations"
+
+#. module: advanced_user_access_rights
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method_access__activity_user_id
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_menu_access__activity_user_id
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__activity_user_id
 msgid "Responsible User"
 msgstr ""
 
 #. module: advanced_user_access_rights
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method_access__message_has_sms_error
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_menu_access__message_has_sms_error
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__message_has_sms_error
 msgid "SMS Delivery error"
@@ -394,17 +526,24 @@ msgid "Search Menu access rules"
 msgstr "Recherches des règles d'accès aux menus"
 
 #. module: advanced_user_access_rights
+#: model_terms:ir.ui.view,arch_db:advanced_user_access_rights.ir_model_method_access_search_view
+msgid "Search Method access rules"
+msgstr "Recherches des règles d'accès aux opérations"
+
+#. module: advanced_user_access_rights
 #: model_terms:ir.ui.view,arch_db:advanced_user_access_rights.ir_ui_view_access_search_view
 msgid "Search View access rules"
 msgstr "Recherches des règles d'accès aux vues"
 
 #. module: advanced_user_access_rights
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method_access__sequence
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_menu_access__sequence
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__sequence
 msgid "Sequence"
 msgstr "Séquence"
 
 #. module: advanced_user_access_rights
+#: model:ir.model.fields,help:advanced_user_access_rights.field_ir_model_method_access__activity_state
 #: model:ir.model.fields,help:advanced_user_access_rights.field_ir_ui_menu_access__activity_state
 #: model:ir.model.fields,help:advanced_user_access_rights.field_ir_ui_view_access__activity_state
 msgid ""
@@ -415,43 +554,46 @@ msgid ""
 msgstr ""
 
 #. module: advanced_user_access_rights
+#: model:ir.model.fields,help:advanced_user_access_rights.field_ir_model_method_access__activity_exception_decoration
 #: model:ir.model.fields,help:advanced_user_access_rights.field_ir_ui_menu_access__activity_exception_decoration
 #: model:ir.model.fields,help:advanced_user_access_rights.field_ir_ui_view_access__activity_exception_decoration
 msgid "Type of the exception activity on record."
 msgstr ""
 
 #. module: advanced_user_access_rights
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method_access__message_unread
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_menu_access__message_unread
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__message_unread
 msgid "Unread Messages"
 msgstr ""
 
 #. module: advanced_user_access_rights
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method_access__message_unread_counter
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_menu_access__message_unread_counter
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__message_unread_counter
 msgid "Unread Messages Counter"
 msgstr ""
 
 #. module: advanced_user_access_rights
+#: model_terms:ir.ui.view,arch_db:advanced_user_access_rights.ir_model_method_access_search_view
 #: model_terms:ir.ui.view,arch_db:advanced_user_access_rights.ir_ui_menu_access_search_view
 #: model_terms:ir.ui.view,arch_db:advanced_user_access_rights.ir_ui_view_access_search_view
 msgid "User"
 msgstr "Utilisateur"
 
-
 #. module: advanced_user_access_rights
 #: model:ir.model,name:advanced_user_access_rights.model_res_users
-#: model:ir.model.fields,field_description:advanced_user_access_rights.field_create_model_config__user_ids
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method_access__user_ids
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_menu_access__user_ids
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__user_ids
 msgid "Users"
 msgstr "Utilisateurs"
 
-
 #. module: advanced_user_access_rights
-#: code:addons/advanced_user_access_rights/wizard/create_model_config.py:0
-#, python-format
-msgid "Users or Groups must be specified to apply the scop of config"
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method_access__users_required
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_menu_access__users_required
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__users_required
+msgid "Users or groups required"
 msgstr ""
 
 #. module: advanced_user_access_rights
@@ -466,6 +608,7 @@ msgstr "Accès au vue"
 
 #. module: advanced_user_access_rights
 #: code:addons/advanced_user_access_rights/models/res_users.py:0
+#: code:addons/advanced_user_access_rights/models/res_users.py:0
 #: model:ir.actions.act_window,name:advanced_user_access_rights.ir_ui_view_access_action
 #: model_terms:ir.ui.view,arch_db:advanced_user_access_rights.ir_ui_view_access_tree_view
 #, python-format
@@ -475,15 +618,17 @@ msgstr "Règle d'accès au vue"
 #. module: advanced_user_access_rights
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_menu_access__visible
 msgid "Visible"
-msgstr "Visible"
+msgstr ""
 
 #. module: advanced_user_access_rights
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method_access__website_message_ids
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_menu_access__website_message_ids
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__website_message_ids
 msgid "Website Messages"
 msgstr ""
 
 #. module: advanced_user_access_rights
+#: model:ir.model.fields,help:advanced_user_access_rights.field_ir_model_method_access__website_message_ids
 #: model:ir.model.fields,help:advanced_user_access_rights.field_ir_ui_menu_access__website_message_ids
 #: model:ir.model.fields,help:advanced_user_access_rights.field_ir_ui_view_access__website_message_ids
 msgid "Website communication history"
@@ -503,5 +648,19 @@ msgid ""
 "You have not necessary access right to do this action,please contact system "
 "administrator!"
 msgstr ""
-"Vous n'avez pas les droits d'accès nécessaires pour effectuer cette action, veuillez contacter l'administrateur"
+"Vous n'avez pas les droits d'accès nécessaires pour effectuer cette action, "
+"veuillez contacter l'administrateur"
 
+#. module: advanced_user_access_rights
+#: code:addons/advanced_user_access_rights/controllers/main.py:0
+#: code:addons/advanced_user_access_rights/controllers/main.py:0
+#, python-format
+msgid ""
+"You have not the necessary access rights to perform this operation,you have "
+"to contact the administrator!"
+msgstr ""
+
+#. module: advanced_user_access_rights
+#: model:ir.model,name:advanced_user_access_rights.model_ir_model_method
+msgid "ir.model.method"
+msgstr ""

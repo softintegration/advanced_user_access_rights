@@ -2,10 +2,13 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 import json
-from odoo.addons.web.controllers.main import Export,ExcelExport,CSVExport,serialize_exception
+from odoo.addons.web.controllers.main import Export,ExcelExport,CSVExport,serialize_exception,DataSet
 from odoo.http import request
 from odoo import http,SUPERUSER_ID,_
-from odoo.exceptions import ValidationError
+from odoo.exceptions import ValidationError,UserError
+from odoo import tools
+import psycopg2
+
 
 
 class ExportInherit(Export):
@@ -71,3 +74,20 @@ class CSVExportInherit(CSVExport):
             raise ValidationError(
                 _("You have not necessary access right to do this action,please contact system administrator!"))
         return super(CSVExportInherit, self).index(data)
+
+
+class DatasetInherit(DataSet):
+
+    @http.route('/web/dataset/call_button', type='json', auth="user")
+    def call_button(self, model, method, args, kwargs):
+        if request.env.user._has_method_permission(model,method=method):
+            return super(DatasetInherit,self).call_button(model,method,args,kwargs)
+        else:
+            raise UserError(_("You have not the necessary access rights to perform this operation,you have to contact the administrator!"))
+
+    def _call_kw(self, model, method, args, kwargs):
+        if request.env.user._has_method_permission(model, method=method):
+            return super(DatasetInherit, self)._call_kw(model, method, args, kwargs)
+        else:
+            raise UserError(
+                _("You have not the necessary access rights to perform this operation,you have to contact the administrator!"))
