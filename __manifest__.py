@@ -2,7 +2,7 @@
 
 {
     'name': 'Advanced user access rights',
-    'version': '1.0.3',
+    'version': '1.0.3.1',
     'author':'Soft-integration',
     'category': 'Security/Access rights',
     'description': "",

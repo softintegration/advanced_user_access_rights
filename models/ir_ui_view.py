@@ -33,18 +33,6 @@ class IrUiView(models.Model):
                 node.set('export_xlsx', "0")
                 node.set('export', "0")
 
-
-    def ____apply_groups(self, node, name_manager, node_info):
-        super(IrUiView, self)._apply_groups(node, name_manager, node_info)
-        # The super-administrators (technical admin user and human admin user) are not concerned by this constrains
-        if self.env.user.id in (SUPERUSER_ID, self.env.ref('base.user_admin').id):
-            return
-        # if no access rules has been configured for this model ,nothing will be done
-        if not self.env.user._model_has_access_rules(name_manager.model._name):
-            return
-        if node.tag in ('button',):
-            if not self.env.user._has_permission(name_manager.model._name, 'write') and not self._is_smart_button(node):
-                node.set('invisible', "1")
     def _apply_groups(self, node, name_manager, node_info):
         super(IrUiView, self)._apply_groups(node, name_manager, node_info)
         # The super-administrators (technical admin user and human admin user) are not concerned by this constrains
