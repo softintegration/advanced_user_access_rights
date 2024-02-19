@@ -38,6 +38,9 @@ class IrUiView(models.Model):
         # The super-administrators (technical admin user and human admin user) are not concerned by this constrains
         if self.env.user.id in (SUPERUSER_ID, self.env.ref('base.user_admin').id):
             return
+        # if this view is excluded from being checked for advanced access rights we have to return
+        if self.env.user._excluded_view(name_manager.model._name, self):
+            return
         if node.tag in ('button',):
             if self.env.user._model_has_access_rules(name_manager.model._name) and \
                     not self.env.user._has_permission(name_manager.model._name, 'write') and not self._is_smart_button(node):

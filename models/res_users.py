@@ -138,6 +138,13 @@ class Users(models.Model):
                 return True
         return False
 
+    def _excluded_view(self,model,view):
+        model = self.env['ir.model'].search([('model', '=', model)])
+        model_permissions = self._get_view_access_rules(model_id=model.id)
+        excluded_views = model_permissions.mapped("excluded_view_ids")
+        return view.id in excluded_views.ids
+
+
     @tools.ormcache('self.id')
     def _check_table_existence(self,tables):
         for table in tables:

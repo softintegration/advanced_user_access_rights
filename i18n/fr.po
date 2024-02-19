@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-12 10:39+0000\n"
-"PO-Revision-Date: 2023-11-12 10:39+0000\n"
+"POT-Creation-Date: 2024-02-19 20:47+0000\n"
+"PO-Revision-Date: 2024-02-19 20:47+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -166,6 +166,11 @@ msgstr "Supprimer"
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__display_name
 msgid "Display Name"
 msgstr "Afficher un nom"
+
+#. module: advanced_user_access_rights
+#: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__excluded_view_ids
+msgid "Excluded views"
+msgstr "Vues exclues"
 
 #. module: advanced_user_access_rights
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_view_access__perm_export
@@ -474,13 +479,6 @@ msgid "Number of unread messages"
 msgstr ""
 
 #. module: advanced_user_access_rights
-#: code:addons/advanced_user_access_rights/models/ir_model_method_access.py:0
-#: model:ir.model.constraint,message:advanced_user_access_rights.constraint_ir_model_method_access_model_id_uniq
-#, python-format
-msgid "Only one Rule by Model is permitted by user!"
-msgstr ""
-
-#. module: advanced_user_access_rights
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_model_method_access__method_ids
 msgid "Operation"
 msgstr "Opération"
@@ -614,6 +612,11 @@ msgstr "Accès au vue"
 #, python-format
 msgid "View access rule"
 msgstr "Règle d'accès au vue"
+
+#. module: advanced_user_access_rights
+#: model:ir.model.fields,help:advanced_user_access_rights.field_ir_ui_view_access__excluded_view_ids
+msgid "Views that should by-pass this access rights constraint"
+msgstr ""
 
 #. module: advanced_user_access_rights
 #: model:ir.model.fields,field_description:advanced_user_access_rights.field_ir_ui_menu_access__visible

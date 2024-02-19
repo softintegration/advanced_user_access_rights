@@ -30,6 +30,8 @@ class IrUiViewAccess(models.Model):
     perm_delete = fields.Boolean(string='Delete', default=True)
     perm_print = fields.Boolean(string='Print', default=True)
     perm_export = fields.Boolean(string='Export', default=True)
+    excluded_view_ids = fields.Many2many('ir.ui.view','ir_ui_view_access_excluded_view','access_id','view_id',
+                                         string='Excluded views',help="Views that should by-pass this access rights constraint")
 
 
     # we have to deal with cache in the case of update or delete

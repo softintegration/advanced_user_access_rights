@@ -24,6 +24,9 @@
                                 <field name="group_ids" attrs="{'invisible':[('users_required','=',True)],'required':[('users_required','=',False)]}"
                                        widget="many2many_tags" readonly="context.get('readonly_groups', False)"
                                        force_save="1" options="{'no_create': True,'no_edit':True}"/>
+                                <field name="excluded_view_ids" widget="many2many_tags"
+                                       options="{'no_create': True,'no_edit':True}"
+                                       optional="hide"/>
                                 <field name="perm_write" widget="boolean_toggle"/>
                                 <field name="perm_delete" widget="boolean_toggle"/>
                             </group>
@@ -54,6 +57,9 @@
                     <field name="group_ids" attrs="{'invisible':[('users_required','=',True)],'required':[('users_required','=',False)]}"
                            widget="many2many_tags" readonly="context.get('readonly_groups', False)"
                            force_save="1" options="{'no_create': True,'no_edit':True}"/>
+                    <field name="excluded_view_ids" widget="many2many_tags"
+                                       options="{'no_create': True,'no_edit':True}"
+                                       optional="hide"/>
                     <field name="perm_write" widget="boolean_toggle"/>
                     <field name="perm_create" widget="boolean_toggle"/>
                     <field name="perm_delete" widget="boolean_toggle"/>
